@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G14042" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Family" representedClassName="Family" syncable="YES">
+        <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="favourites" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Person" inverseName="favFamily" inverseEntity="Person" syncable="YES"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Person" inverseName="family" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="star" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="family" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Family" inverseName="members" inverseEntity="Family" syncable="YES"/>
+        <relationship name="favFamily" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Family" inverseName="favourites" inverseEntity="Family" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Family" positionX="-63" positionY="9" width="128" height="90"/>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="135"/>
+    </elements>
+</model>
